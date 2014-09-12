@@ -1,5 +1,6 @@
  $(function() {
       $('#slides').slidesjs({
+        alert('Hello')
         width: 940,
         height: 528,
         navigation: false
