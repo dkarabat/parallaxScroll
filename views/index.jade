@@ -2,6 +2,9 @@ extends layout
 
 block extraHeaders
     script(src='/javascripts/paralax.js')
+    script(src='http://code.jquery.com/jquery-1.9.1.min.js')
+    script(src='/javascripts/jquery.slides.min.js')
+    script(src='/javascripts/sl.js')
 
 block content
     section#main(data-speed='6', data-type='background')
@@ -23,22 +26,13 @@ block content
 
 
     section#portfolio(data-speed='8', data-type='background')
-        .container
-            .row-fluid
-                .span12.text-center
-                    h1 page 1
-                         .slider
-                              ul
-                                  li
-                                     img(src="i/1.jpg" alt="")
-                                  li 
-                                     img(src="i/2.jpg" alt="")
-                                  li 
-                                     img(src="i/3.jpg" alt="")
-                                  li 
-                                     img(src="i/4.jpg" alt="") 
-                                  li 
-                                     img(src="i/5.jpg" alt="") 
+	  .container
+               .slides
+                    img(src="img/example-slide-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/")
+                    img(src="img/example-slide-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/")
+                    img(src="img/example-slide-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/")
+                    img(src="img/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/")
+
 
     section#myworks(data-speed='6', data-type='background')
         .container

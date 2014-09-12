@@ -1,34 +1,27 @@
-$(document).ready(function()
-	{
-		$(".slider").each(function ()
-		{
-			var obj = $(this);
-			$(obj).append("<div class='nav'></div>");
+ $(function() {
+      $('#slides').slidesjs({
+        width: 940,
+        height: 528,
+        navigation: false
+      });
 
-			$(obj).find("li").each(function ()
-			{
-				$(obj).find(".nav").append("<span rel='"+$(this).index()+"'></span>");
-				$(this).addClass("slider"+$(this).index());
-			});
+      /*
+        To have multiple slideshows on the same page
+        they just need to have separate IDs
+      */
+      $('#slides2').slidesjs({
+        width: 940,
+        height: 528,
+        navigation: false,
+        start: 3,
+        play: {
+          auto: true
+        }
+      });
 
-			$(obj).find("span").first().addClass("on");
-		});
-	});
-
-	function sliderJS (obj, sl) // slider function
-	{
-		var ul = $(sl).find("ul");
-		var bl = $(sl).find("li.slider"+obj);
-		var step = $(bl).width();
-		$(ul).animate({marginLeft: "-"+step*obj}, 500);
-	}
-
-	$(document).on("click", ".slider .nav span", function() // slider click navigate
-	{
-		var sl = $(this).closest(".slider");
-		$(sl).find("span").removeClass("on");
-		$(this).addClass("on");
-		var obj = $(this).attr("rel");
-		sliderJS(obj, sl);
-		return false;
-	});
+      $('#slides3').slidesjs({
+        width: 940,
+        height: 528,
+        navigation: false
+      });
+    });
