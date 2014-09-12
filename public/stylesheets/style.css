@@ -62,3 +62,6 @@ img#heroImg {
 #slides {
   display:none;
 }
+.slidesjs-pagination .active {
+      color:red;
+}
