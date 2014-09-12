@@ -1,5 +1,6 @@
 $(document).ready(function()
 	{
+                alert('Hello');
 		$(".slider").each(function ()
 		{
 			var obj = $(this);
