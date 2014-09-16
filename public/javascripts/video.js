@@ -1,0 +1,1 @@
+$('.covervid-video').coverVid(500, 500);
