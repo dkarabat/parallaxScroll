@@ -2,9 +2,9 @@
 $(document).ready(function() {
 
 
-	$('#myworks').find('.bk').videoBG({
+	$('#myworks').videoBG({
 //		position:"fixed",
-		zIndex:0,
+		zIndex:1,
 		mp4:'assets/christmas_snow.mp4',
 		ogv:'assets/christmas_snow.ogv',
 		webm:'assets/christmas_snow.webm',

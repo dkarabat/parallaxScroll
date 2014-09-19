@@ -1,0 +1,6 @@
+$(function() {
+    $('div :input').fancyInput({
+
+    });
+
+});

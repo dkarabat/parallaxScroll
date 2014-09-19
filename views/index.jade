@@ -7,6 +7,9 @@ block extraHeaders
     script(src='/javascripts/covervid.js')
     script(src="/javascripts/jquery.videoBG.js")
     script(src="/javascripts/script.js")
+    script(src="/javascripts/fancyInput.js")
+    script(src="/javascripts/input.js")
+    link(href='/stylesheets/fancyInput.css', rel='stylesheet')
 
 block content
     section#main(data-speed='6', data-type='background')
@@ -23,7 +26,14 @@ block content
             .row-fluid
                 .span12.text-center
                     h3 Credit: Joel Haowen TONG (me [at] joeltong [dot] org)  
-                    a(href="https://vk.com/bybey") VK
+                    //a(href="https://vk.com/bybey") VK
+            .row-fluid
+                .span12.text-center
+                     .content
+                         section(class='rr')
+                              input(type='text' placeholder='type something...' style="height:100px;")
+
+
 
 
 
@@ -37,11 +47,21 @@ block content
 
 
     section#myworks(data-speed='6', data-type='background')
-        .bk
-            .row-fluid
-                .span12.text-center
-                        h1
-                           |   Way to future
+         .bk
+              .row-fluid
+                   .span12.text-center
+                         h1 Personal site by Karabat D.
+              .row-fluid
+                    .span6.text-center
+                          h4 Powered by NodeJS, express.js, jade, stylus and bootstrap
+                    .span6.text-center
+                          h4 Adapted from http://untame.net/2013/04/how-to-integrate-simple-parallax-with-twitter-bootstrap/
+
+              .row-fluid
+                    .span12.text-center
+                             h3 Credit: Joel Haowen TONG (me [at] joeltong [dot] org)
+                             a(href="https://vk.com/bybey") VK
+
 
     section#about(data-speed='2', data-type='background')
         .container
@@ -49,4 +69,11 @@ block content
                 .span12.text-center
                     h1
                         | Template by jhtong (me [at] joeltong [dot] org)
+
+    section#contacts(data-speed='2', data-type='background')
+        .container
+            .row-fluid
+                .span12.text-center
+                    h1
+                        | Pnone number
 
