@@ -9,6 +9,6 @@
     "express": "3.2.6",
     "jade": "*",
     "stylus": "*",
-    "socket.io" : "0.8.5"
+    "socket.io" : "1.2.0"
   }
 }
