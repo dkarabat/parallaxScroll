@@ -3,11 +3,17 @@
  * Module dependencies.
  */
 
+var options = {
+  'log level': 3
+};
+
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
+
+
 
 var app = express();
 
@@ -22,6 +28,7 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(require('stylus').middleware(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
+//app.engine('.html', require('jade').__express);
 
 // development only
 if ('development' == app.get('env')) {
@@ -31,6 +38,21 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
+
+});
+
+var io = require('socket.io').listen(server, options);
+
+io.sockets.on('connection', function (client) {
+  client.on('message', function (message) {
+    try {
+      client.emit('message', message);
+      client.broadcast.emit('message', message);
+    } catch (e) {
+      console.log(e);
+      client.disconnect();
+    }
+  });
 });

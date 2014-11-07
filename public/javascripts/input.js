@@ -1,5 +1,5 @@
 $(function() {
-    $('div :input').fancyInput({
+    $('#mytext').fancyInput({
 
     });
 

@@ -182,3 +182,32 @@ img#heroImg {
   font-weight: 400;
   src: local('Fjalla One'), local('FjallaOne-Regular'), url("http://themes.googleusercontent.com/static/fonts/fjallaone/v1/rxxXUYj4oZ6Q5oDJFtEd6hsxEYwM7FgeyaSgU71cLG0.woff") format('woff');
 }
+.demo {
+  width: 600px;
+  margin: 20px auto;
+  padding: 10px;
+  color: #4f6b72;
+  font-family: "PT Sans", Verdana, Arial, sans-serif;
+  font-size: 13px;
+}
+.chat .messages {
+  height: 300px;
+  border: 1px solid #d4d4d4;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 5px;
+}
+.chat .messages .user {
+  color: #b22222;
+}
+.chat .message {
+  width: 70%;
+}
+.chat .panel {
+  margin-top: 8px;
+}
+#message_text {
+  width: 60%;
+  display: inline-block;
+  margin-left: 8px;
+}

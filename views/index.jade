@@ -9,6 +9,10 @@ block extraHeaders
     script(src="/javascripts/script.js")
     script(src="/javascripts/fancyInput.js")
     script(src="/javascripts/input.js")
+    script(src="/javascripts/chat.js")
+    script(src="/javascripts/socket.io.js")
+    script(src="/javascripts/ion.sound.js")
+    script(src="https://cdn.socket.io/socket.io-1.2.0.js")
     link(href='/stylesheets/fancyInput.css', rel='stylesheet')
 
 block content
@@ -31,7 +35,7 @@ block content
                 .span12.text-center
                      .content
                          section(class='rr')
-                              input(type='text' placeholder='type something...' style="height:100px;")
+                              input(type='text' id='mytext' placeholder='type something...' style="height:100px;")
 
 
 
@@ -71,9 +75,14 @@ block content
                         | Template by jhtong (me [at] joeltong [dot] org)
 
     section#contacts(data-speed='2', data-type='background')
-        .container
-            .row-fluid
-                .span12.text-center
-                    h1
-                        | Pnone number
+                 h1 Демо простой чат с помощью nodejs и socket.io
+                     .chat
+                         #messages.messages
+                         .panel
+                             span.nick
+                             input#message_text(type='text', name='message_text' )
+                             button#message_btn(type='button') Отправить
+
+
+
 
