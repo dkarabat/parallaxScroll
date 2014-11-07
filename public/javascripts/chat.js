@@ -39,7 +39,7 @@ $(document).ready(function () {
         preload: true,
         volume: 1.0
     });
-    
+
 
     socket.on('message', function (data) {
 
@@ -51,10 +51,13 @@ $(document).ready(function () {
     $("#message_text").keypress(function (e) {
         var text = $("#message_text").val();
         if (e.which == 13) {
-            if (text.length <= 0)
+            if (text.length <= 0) {
                 return;
-            message_txt.val("");
-            socket.emit("message", {message: text, name: name});
+            } else {
+                console.log('Сообщение чата = ',  text);
+                message_txt.val("");
+                socket.emit("message", {message: text, name: name});
+            }
             return false;    //<---- Add this line
         }
     });
