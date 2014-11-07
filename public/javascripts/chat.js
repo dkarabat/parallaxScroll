@@ -6,6 +6,7 @@ $(document).ready(function () {
     $('.chat .nick').text(name);
 
     function msg(nick, message) {
+        ion.sound.play("bell_ring");
         var m = '<div class="msg">' +
             '<span class="user">' + safe(nick) + ':</span> '
             + safe(message) +
@@ -42,8 +43,6 @@ $(document).ready(function () {
 
 
     socket.on('message', function (data) {
-
-        ion.sound.play("bell_ring");
         msg(data.name, data.message);
         message_txt.focus();
     });
